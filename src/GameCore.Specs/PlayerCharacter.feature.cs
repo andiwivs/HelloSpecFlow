@@ -108,6 +108,58 @@ this.ScenarioInitialize(scenarioInfo);
 #line hidden
             this.ScenarioCleanup();
         }
+        
+        [NUnit.Framework.TestAttribute()]
+        [NUnit.Framework.DescriptionAttribute("Elf race characters get additional 20 damage resistance")]
+        public virtual void ElfRaceCharactersGetAdditional20DamageResistance()
+        {
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Elf race characters get additional 20 damage resistance", null, ((string[])(null)));
+#line 22
+this.ScenarioInitialize(scenarioInfo);
+            this.ScenarioStart();
+#line 23
+ testRunner.Given("I\'m a new player", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+#line 24
+  testRunner.And("I have a damage resistance of 10", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 25
+  testRunner.And("I\'m an Elf", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 26
+ testRunner.When("I take 40 damage", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 27
+ testRunner.Then("My health should be 90", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line hidden
+            this.ScenarioCleanup();
+        }
+        
+        [NUnit.Framework.TestAttribute()]
+        [NUnit.Framework.DescriptionAttribute("Elf race characters get additional 20 damage resistance using data table")]
+        public virtual void ElfRaceCharactersGetAdditional20DamageResistanceUsingDataTable()
+        {
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Elf race characters get additional 20 damage resistance using data table", null, ((string[])(null)));
+#line 29
+this.ScenarioInitialize(scenarioInfo);
+            this.ScenarioStart();
+#line 30
+ testRunner.Given("I\'m a new player", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+#line hidden
+            TechTalk.SpecFlow.Table table1 = new TechTalk.SpecFlow.Table(new string[] {
+                        "attribute",
+                        "value"});
+            table1.AddRow(new string[] {
+                        "Race",
+                        "Elf"});
+            table1.AddRow(new string[] {
+                        "Resistance",
+                        "10"});
+#line 31
+  testRunner.And("I have the following attributes", ((string)(null)), table1, "And ");
+#line 35
+ testRunner.When("I take 40 damage", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 36
+ testRunner.Then("My health should be 90", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line hidden
+            this.ScenarioCleanup();
+        }
     }
 }
 #pragma warning restore

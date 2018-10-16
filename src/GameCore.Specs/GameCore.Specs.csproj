@@ -62,6 +62,12 @@
     <None Include="App.config" />
     <None Include="packages.config" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\GameCore\GameCore.csproj">
+      <Project>{b1ce5b99-b280-4fc4-ac37-ea9847147614}</Project>
+      <Name>GameCore</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="..\..\packages\SpecFlow.2.4.0\build\SpecFlow.targets" Condition="Exists('..\..\packages\SpecFlow.2.4.0\build\SpecFlow.targets')" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">

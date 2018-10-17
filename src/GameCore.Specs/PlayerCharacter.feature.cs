@@ -157,7 +157,7 @@ this.FeatureBackground();
                         "Race",
                         "Elf"});
             table1.AddRow(new string[] {
-                        "Resistance",
+                        "DamageResistance",
                         "10"});
 #line 30
  testRunner.Given("I have the following attributes", ((string)(null)), table1, "Given ");

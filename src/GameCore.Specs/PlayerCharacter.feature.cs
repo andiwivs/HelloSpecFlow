@@ -157,7 +157,7 @@ this.FeatureBackground();
                         "Race",
                         "Elf"});
             table1.AddRow(new string[] {
-                        "DamageResistance",
+                        "Resistance",
                         "10"});
 #line 30
  testRunner.Given("I have the following attributes", ((string)(null)), table1, "Given ");
@@ -187,6 +187,41 @@ this.FeatureBackground();
   testRunner.And("Cast a healing spell", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 41
  testRunner.Then("My health should be 100", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line hidden
+            this.ScenarioCleanup();
+        }
+        
+        [NUnit.Framework.TestAttribute()]
+        [NUnit.Framework.DescriptionAttribute("Total magical power")]
+        public virtual void TotalMagicalPower()
+        {
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Total magical power", null, ((string[])(null)));
+#line 43
+this.ScenarioInitialize(scenarioInfo);
+            this.ScenarioStart();
+#line 6
+this.FeatureBackground();
+#line hidden
+            TechTalk.SpecFlow.Table table2 = new TechTalk.SpecFlow.Table(new string[] {
+                        "item",
+                        "value",
+                        "power"});
+            table2.AddRow(new string[] {
+                        "Ring",
+                        "200",
+                        "100"});
+            table2.AddRow(new string[] {
+                        "Amulet",
+                        "400",
+                        "200"});
+            table2.AddRow(new string[] {
+                        "Gloves",
+                        "100",
+                        "400"});
+#line 44
+ testRunner.Given("I have the following magical items", ((string)(null)), table2, "Given ");
+#line 49
+ testRunner.Then("My total magical power should be 700", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();
         }

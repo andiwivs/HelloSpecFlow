@@ -65,5 +65,29 @@ namespace GameCore.Specs
         {
             _player.CastHealingSpell();
         }
+
+        [Given(@"I have the following magical items")]
+        public void GivenIHaveTheFollowingMagicalItems(Table table)
+        {
+            foreach (var row in table.Rows)
+            {
+                var name = row["item"];
+                var value = row["value"];
+                var power = row["power"];
+
+                _player.MagicalItems.Add(new MagicalItem
+                {
+                    Name = name,
+                    Value = int.Parse(value),
+                    Power = int.Parse(power)
+                });
+            }
+        }
+
+        [Then(@"My total magical power should be (.*)")]
+        public void ThenMyTotalMagicalPowerShouldBe(int expectedPower)
+        {
+            Assert.AreEqual(expectedPower, _player.MagicalPower);
+        }
     }
 }

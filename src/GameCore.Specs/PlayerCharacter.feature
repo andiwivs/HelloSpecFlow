@@ -21,15 +21,21 @@ Scenario: Taking too much damage results in player death
 	Then I should be dead
 
 Scenario: Elf race characters get additional 20 damage resistance
-		And I have a damage resistance of 10
+	Given I have a damage resistance of 10
 		And I'm an Elf
 	When I take 40 damage
 	Then My health should be 90
 
 Scenario: Elf race characters get additional 20 damage resistance using data table
-		And I have the following attributes
+	Given I have the following attributes
 		| attribute  | value |
 		| Race       | Elf   |
 		| Resistance | 10    |
 	When I take 40 damage
 	Then My health should be 90
+
+Scenario: Healers restore all health
+	Given My character class is set to Healer
+	When I take 40 damage
+		And Cast a healing spell
+	Then My health should be 100

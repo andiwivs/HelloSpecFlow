@@ -28,9 +28,9 @@ Scenario: Elf race characters get additional 20 damage resistance
 
 Scenario: Elf race characters get additional 20 damage resistance using data table
 	Given I have the following attributes
-		| attribute  | value |
-		| Race       | Elf   |
-		| Resistance | 10    |
+		| attribute        | value |
+		| Race             | Elf   |
+		| DamageResistance | 10    |
 	When I take 40 damage
 	Then My health should be 90
 

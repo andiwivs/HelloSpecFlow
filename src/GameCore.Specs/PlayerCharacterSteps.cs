@@ -70,9 +70,17 @@ namespace GameCore.Specs
         [Given(@"I have the following magical items")]
         public void GivenIHaveTheFollowingMagicalItems(Table table)
         {
-            var items = table.CreateSet<MagicalItem>();
+            var items = table.CreateDynamicSet();
 
-            _player.MagicalItems.AddRange(items);
+            foreach (var item in items)
+            {
+                _player.MagicalItems.Add(new MagicalItem
+                {
+                    Name = item.name,
+                    Value = item.value,
+                    Power = item.power
+                });
+            }
         }
 
         [Then(@"My total magical power should be (.*)")]

@@ -1,4 +1,5 @@
-﻿using NUnit.Framework;
+﻿using System.Collections.Generic;
+using NUnit.Framework;
 using TechTalk.SpecFlow;
 using TechTalk.SpecFlow.Assist;
 
@@ -69,19 +70,9 @@ namespace GameCore.Specs
         [Given(@"I have the following magical items")]
         public void GivenIHaveTheFollowingMagicalItems(Table table)
         {
-            foreach (var row in table.Rows)
-            {
-                var name = row["item"];
-                var value = row["value"];
-                var power = row["power"];
+            var items = table.CreateSet<MagicalItem>();
 
-                _player.MagicalItems.Add(new MagicalItem
-                {
-                    Name = name,
-                    Value = int.Parse(value),
-                    Power = int.Parse(power)
-                });
-            }
+            _player.MagicalItems.AddRange(items);
         }
 
         [Then(@"My total magical power should be (.*)")]
